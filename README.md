@@ -1,6 +1,6 @@
 # OCR From Scratch on MNIST Dataset
 
-Hi People! This project is a simplist version of an Optical Character Recognition (OCR). So this project is build on the basis previously uploaded repository [Neural Network from Scratch (nnfs)](https://github.com/Adityadikonda10/Neural-Network-from-Scratch-nnfs-). It is a practical implementaion of Neural Networks to identify hand written numbers from the famous MNIST Dataset.
+Hey everyone! This project is a basic version of Optical Character Recognition (OCR). It's built on the previously uploaded repository [Neural Network from Scratch (nnfs)](https://github.com/Adityadikonda10/Neural-Network-from-Scratch-nnfs-) which is a practical implementation of Neural Networks to identify handwritten numbers from the well-known MNIST Dataset.
 
 ## Table of Contents
 - Overview.
@@ -15,15 +15,15 @@ Hi People! This project is a simplist version of an Optical Character Recognitio
 
 ## Overview
 
-The project showcases implementation of Neural Networks from Scratch for classifying hand written digits. in knowledge of Forward Propogation, Backward Propogation, Activation Function, Loss Function and Optimisation. Data set used is MNIST Dataset.
+The project demonstrates the implementation of Neural Networks from Scratch for classifying handwritten digits using Forward Propagation, Backward Propagation, Activation Function, Loss Function, and Optimization methods. The dataset utilized is the MNIST Dataset.
 
 ## Dataset 
 
-The well known MNIST dataset created in 1994 for training Artificial Neural Networks. This dataset consists of 60,000 training labled images and 10,000 testing labled images of hand written digits each 28 $\times$ 28 pixels. Classified into 10 classes from 0 to 9.
+The well-known MNIST dataset was created in 1994 to train Artificial Neural Networks. This dataset comprises 60,000 training-labelled images and 10,000 testing-labelled images of handwritten digits, each 28 $\times$ 28 pixels. These images are classified into 10 classes ranging from 0 to 9.
 
 ## Model Architecture
 
-The Neural Network Architecture used for this project consists of fully connected Network:
+The neural network architecture used for this project consists of a fully connected network.
 
 - Input Layer: 128 neurons gets 784 inputs, with ReLU activaton function. 
     - 784 inputs are the vector format of the image. since the image is 28 $\times$ 28 ```image.shape()``` gives ```(28, 28)``` pixels in dimentions. when vectorised ```image.shape()``` gives ```(1, 784)```.
@@ -32,7 +32,7 @@ The Neural Network Architecture used for this project consists of fully connecte
 - Output Layer: 10 neurons gets 64 inputs, with SoftMax activaton function. 
 
 ## Emphasis on Adam Optimizier
-For previous repository of NNFS Optimizer used was SGD. the problem with using SGD was slow learning process and high computation power. Upgrading to Adam **Adaptive Moment Estimation** makes the process faster and a bit light on resource consumption. As this optimizer works on concept of velocity. It adaptively changes the step size for finding the local minima.
+The previous optimizer used for the NNFS repository was SGD. The issue with using SGD was the slow learning process and high computational requirements. Switching to Adam (Adaptive Moment Estimation) has made the process faster and lighter in terms of resource consumption. This optimizer operates based on the concept of velocity, adaptively adjusting the step size to find the local minima.
 
 ### Compute the biased first moment estimate $m_t$
 $$
@@ -59,7 +59,7 @@ $$\theta_t = \theta_{t-1} - \frac{\alpha \cdot \hat{v}_t}{\sqrt{\hat{m}_t} + \ep
 
 ## Training
 
-The model can be trained and saved through _**training_OCR.py**_ file training process includes classifying the input data to correct class through forward propogation and updating of weights and biases of the network after each epoch though back propogation.
+The file _**training_OCR.py**_ is used to train and save the model. The training process involves classifying the input data to the correct class through forward propagation and updating the weights and biases of the network after each epoch through backpropagation.
 
 - Learning Rate is set to 0.01.
 - number of epochs is set to 301
@@ -78,14 +78,13 @@ The trained model is saved as **OCR_Model_128,64,64,10.pkl**.
 
 ## Testing
 
-The trained model can be tested on the 10,000 test images form the MNIST Dataset.
-For this file _**testing_OCR.py**_ a random batch of 10 examples are tested in a series of 5.
+The trained model can be used to test the 10,000 test images from the MNIST Dataset. In the file _**testing_OCR.py**_, a random batch of 10 examples is tested in series of 5.
 
 ## Results
 
 Loss and Accuracy are tracked at every epoch and plottet for visualisation.
 #### Perfomance
-- Highest Accuracy achieved is 99% at 300<sup>th</sup> epoch.
+- Highest achieved Accuracy is 99% at 300<sup>th</sup> epoch.
 - 90% Accuracy achieved at 53<sup>rd</sup> epoch.
 
 
